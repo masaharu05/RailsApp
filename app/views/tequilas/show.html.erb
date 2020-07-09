@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tequila.name %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @tequila.memo %>
+</p>
+
+<p>
+<%= image_tag @tequila.image.url if @tequila.image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_tequila_path(@tequila) %> |
+<%= link_to 'Back', tequilas_path %>

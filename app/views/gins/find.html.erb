@@ -1,0 +1,26 @@
+<%= form_tag(controller: "gins", action: "find") do %>
+
+  <div class="form-group">
+    <label for="find">検索</label>
+    <%= text_field_tag("find","",{class:"form-control"}) %>
+  </div>
+  <%= submit_tag("Click") %>
+<% end %>
+
+
+<table class="table">
+  <tr>
+  
+  <th>name</th>
+  <th>memo</th>
+  </tr>
+<% @gin.each do |obj| %>
+  <tr>
+  
+  <th><%= obj.name %></th>
+  <th><%= obj.memo %></th>
+  </tr>
+<% end %>
+</table>
+
+<a href="/gins/">Gin</a>

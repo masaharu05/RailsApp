@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rums</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rums.each do |rum| %>
+      <tr>
+        <td><%= rum.name %></td>
+        <td><%= rum.memo %></td>
+        <td><%= link_to 'Show', rum %></td>
+        <td><%= link_to 'Edit', edit_rum_path(rum) %></td>
+        <td><%= link_to 'Destroy', rum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @rums %>
+</div>
+
+<br>
+
+<%= link_to 'New Rum', new_rum_path %>
+<p><a href="/rums/find/">検索</a></>
+<p><a href="/drinks/">top</a></p>
+

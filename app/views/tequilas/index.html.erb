@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tequilas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tequilas.each do |tequila| %>
+      <tr>
+        <td><%= tequila.name %></td>
+        <td><%= tequila.memo %></td>
+        <td><%= link_to 'Show', tequila %></td>
+        <td><%= link_to 'Edit', edit_tequila_path(tequila) %></td>
+        <td><%= link_to 'Destroy', tequila, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @tequilas %>
+</div>
+<br>
+
+<%= link_to 'New Tequila', new_tequila_path %>
+<p><a href="/tequilas/find/">検索</a></>
+<p><a href="/drinks/">top</a></p>
+

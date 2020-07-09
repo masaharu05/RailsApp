@@ -1,0 +1,6 @@
+class Gin < ApplicationRecord
+
+  
+
+
+end

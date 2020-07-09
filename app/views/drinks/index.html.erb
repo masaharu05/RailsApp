@@ -1,0 +1,129 @@
+<h1>おうち時間</h1>
+<h1>ユーザーネーム：
+<%= @account.name %></h1>
+
+<div>
+<%= link_to 'login_check page!&gt;&gt;'.html_safe,{action:'login_check'} %>
+</div>
+
+<div>
+<%= link_to "sign out&gt;&gt;".html_safe,destroy_account_session_path,method: :delete %>
+</div>
+
+
+<ul>
+
+<li><a href="/gins/">Gin</a></li>
+<li><a href="/vodkas/">Vodka</a></li>
+<li><a href="/rums/">Rum</a></li>
+<li><a href="/tequilas/">Tequila</a></li>
+
+
+</ul>
+
+<h1>Gin</h1>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gins.each do |gin| %>
+      <tr>
+        <td><%= gin.name %></td>
+        <td><%= gin.memo %></td>
+        <td><%= link_to 'Show', gin %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @gins %>
+</div>
+
+<br>
+<br>
+<h1>Vodka</h1>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vodkas.each do |vodka| %>
+      <tr>
+        <td><%= vodka.name %></td>
+        <td><%= vodka.memo %></td>
+        <td><%= link_to 'Show', vodka %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @vodkas %>
+</div>
+
+<br>
+<br>
+<h1>Rum</h1>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rums.each do |rum| %>
+      <tr>
+        <td><%= rum.name %></td>
+        <td><%= rum.memo %></td>
+        <td><%= link_to 'Show', rum %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @rums %>
+</div>
+
+<br>
+<br>
+<h1>Tequila</h1>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tequilas.each do |tequila| %>
+      <tr>
+        <td><%= tequila.name %></td>
+        <td><%= tequila.memo %></td>
+        <td><%= link_to 'Show', tequila %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div><%= paginate @tequilas %>
+</div>
+

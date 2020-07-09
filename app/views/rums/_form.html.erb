@@ -1,0 +1,33 @@
+<%= form_with(model: rum, local: true) do |form| %>
+  <% if rum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rum.errors.count, "error") %> prohibited this rum from being saved:</h2>
+
+      <ul>
+        <% rum.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo, {rows:5} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

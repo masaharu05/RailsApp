@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @gin.name %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @gin.memo %>
+</p>
+<p>
+<%= image_tag @gin.image.url if @gin.image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_gin_path(@gin) %> |
+<%= link_to 'Back', gins_path %>

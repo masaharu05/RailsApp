@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rum.name %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @rum.memo %>
+</p>
+<p>
+<%= image_tag @rum.image.url if @rum.image.present? %>
+</p>
+
+<%= link_to 'Edit', edit_rum_path(@rum) %> |
+<%= link_to 'Back', rums_path %>
